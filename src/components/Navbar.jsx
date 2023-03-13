@@ -44,8 +44,11 @@ const Navbar = () => {
         >
           <img src={logoPurple} alt="logo" className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex ">
-            &nbsp; s1xp4c &nbsp;
-            <span className="sm:block hidden"> | &nbsp; Blockstarter</span>
+            &nbsp; Morten &nbsp;
+            <span className="sm:block hidden">
+              {" "}
+              | &nbsp; Blockstarter development
+            </span>
           </p>
         </Link>
 

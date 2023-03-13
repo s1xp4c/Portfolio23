@@ -9,7 +9,7 @@ const Computers = ({ isMobile }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor="black" />
+      <hemisphereLight intensity={0.15} groundColor="purple" />
       <spotLight
         position={[-20, 50, 20]}
         angle={0.14}
@@ -55,7 +55,7 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
-      className="cursor-move"
+      className="cursor-[url(./assets/cursor/xyz_purple.cur),_pointer]"
       frameloop="demand"
       shadows
       dpr={[1, 2]}

@@ -10,6 +10,7 @@ function BackgroundAnimation() {
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    ctx.globalAlpha = 0.4; // Set the global alpha value to 50%
 
     let particlesArray;
 
@@ -87,7 +88,7 @@ function BackgroundAnimation() {
       particlesArray = [];
       let numberOfParticles = (canvas.height * canvas.width) / 25000;
       if (!isMobile) {
-        numberOfParticles = (canvas.height * canvas.width) / 22000;
+        numberOfParticles = (canvas.height * canvas.width) / 17000;
       }
       for (let i = 0; i < numberOfParticles * 2; i++) {
         let size = Math.random() * 5 + 1;

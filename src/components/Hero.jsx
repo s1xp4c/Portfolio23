@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { BackgroundAnimation, ComputersCanvas } from "./canvas";
+import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
   return (
@@ -11,25 +11,24 @@ const Hero = () => {
           className={`absolute inset-0 top-[90px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
         >
           <div className="flex flex-col justify-center items-center mt-5">
-            <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
+            <div className="w-5 h-5 squared-full bg-[#915EFF]" />
             <div className="w-1 sm:h-80 h-40 violet-gradient" />
           </div>
 
           <div>
             <h1 className={`${styles.heroHeadText} text-white`}>
-              Welcome to <span className="text-[#915EFF]">Blockstarter</span>
+              Blockstarter <span className="text-[#915EFF]">Portfolio</span>
             </h1>
-            <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+            <p className={`${styles.heroSubText} mt-1 text-white-100`}>
               web3 security, Blockchain and AI interaction,{" "}
               <br className="sm:block hidden" />
-              3d Animations, Frontend UI and Backend applications
+              3d Animations, Frontend UI and applications development
             </p>
           </div>
         </div>
 
-        <BackgroundAnimation />
         <ComputersCanvas />
-        <div className="absolute xs:bottom-6 bottom-22 w-full flex justify-center items-center">
+        <div className="absolute xs:bottom-5 bottom-22 w-full flex justify-center items-center">
           <a href="#about">
             <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2 border-[#915EFF]">
               <motion.div
