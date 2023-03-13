@@ -55,7 +55,7 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
-      className="cursor-[url(./assets/cursor/xyz_purple.cur),_pointer]"
+      className="cursor-move"
       frameloop="demand"
       shadows
       dpr={[1, 2]}

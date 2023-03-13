@@ -10,7 +10,7 @@ function BackgroundAnimation() {
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    ctx.globalAlpha = 0.4; // Set the global alpha value to 50%
+    ctx.globalAlpha = 0.4; // Set the global alpha value to 40%
 
     let particlesArray;
 
