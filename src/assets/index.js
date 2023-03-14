@@ -19,7 +19,7 @@ import reactjs from "./tech/reactjs.png";
 import vite from "./tech/vite.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
+import threejs from "./tech/threejs.png";
 
 import bacd from "./company/bacd.png";
 import hvidovrehospital from "./company/hvidovrehospital.png";
@@ -27,9 +27,9 @@ import postnord from "./company/postnord.png";
 import kbhkommune from "./company/kbhkommune.png";
 import cbs from "./company/cbs.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import blockdefi from "./blockdefi.png";
+import etuga from "./etuga.png";
+import rocketfuel from "./rocketfuel.png";
 
 export {
     logoPurple,
@@ -57,8 +57,8 @@ export {
     hvidovrehospital,
     postnord,
     kbhkommune,
-    carrent,
-    jobit,
-    tripguide,
+    blockdefi,
+    etuga,
+    rocketfuel,
     cbs,
 };

@@ -19,9 +19,9 @@ import {
     postnord,
     kbhkommune,
     hvidovrehospital,
-    carrent,
-    jobit,
-    tripguide,
+    blockdefi,
+    etuga,
+    rocketfuel,
     threejs,
     cbs,
 } from "../assets";
@@ -41,19 +41,19 @@ export const navLinks = [{
 ];
 
 const services = [{
-        title: "Web3 Developer",
+        title: "NextAuth & Web3 Security",
         icon: web3,
     },
     {
-        title: "Typescript Developer",
+        title: "Typescript & React",
         icon: mobile,
     },
     {
-        title: "Frontend Developer",
+        title: "Frontend Interfaces",
         icon: backend,
     },
     {
-        title: "Content Creator",
+        title: "2d & 3d Content",
         icon: creator,
     },
 ];
@@ -79,7 +79,7 @@ const technologies = [{
         icon: reactjs,
     },
     {
-        name: "chakra UI",
+        name: "Chakra UI",
         icon: chakra,
     },
     {
@@ -182,31 +182,32 @@ const experiences = [{
 ];
 
 const testimonials = [{
-        testimonial: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-        name: "Sara Lee",
-        designation: "CFO",
-        company: "Acme Co",
-        image: "https://randomuser.me/api/portraits/women/4.jpg",
+        testimonial: "Bla bla bla",
+        name: "Some person",
+        designation: "Some title",
+        company: "Some Comany",
+        image: "https://randomuser.me/api/portraits/women/3.jpg",
     },
     {
-        testimonial: "I've never met a web developer who truly cares about their clients' success like Rick does.",
-        name: "Chris Brown",
-        designation: "COO",
-        company: "DEF Corp",
-        image: "https://randomuser.me/api/portraits/men/5.jpg",
+        testimonial: "Bla bla bla",
+        name: "Some person",
+        designation: "Some title",
+        company: "Some Comany",
+        image: "https://randomuser.me/api/portraits/women/5.jpg",
     },
     {
-        testimonial: "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-        name: "Lisa Wang",
-        designation: "CTO",
-        company: "456 Enterprises",
-        image: "https://randomuser.me/api/portraits/women/6.jpg",
+        testimonial: "Bla bla bla",
+        name: "Some person",
+        designation: "Some title",
+        company: "Some Comany",
+        image: "https://randomuser.me/api/portraits/men/4.jpg",
     },
+
 ];
 
 const projects = [{
-        name: "Car Rent",
-        description: "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        name: "BACD Finance",
+        description: "Web3-Authentication-based platform that allows users to Login with Metamask wallet and see Blockchain holdings and transactions, Swap coins and see Real-time price charts, providing a convenient and efficient solution for decentralized finance needs.",
         tags: [{
                 name: "react",
                 color: "blue-text-gradient",
@@ -216,49 +217,81 @@ const projects = [{
                 color: "green-text-gradient",
             },
             {
-                name: "tailwind",
+                name: "moralis",
+                color: "orange-text-gradient",
+            },
+            {
+                name: "nextauth",
+                color: "lime-text-gradient",
+            },
+            {
+                name: "chakraui",
                 color: "pink-text-gradient",
             },
+            {
+                name: "typescript",
+                color: "cyan-text-gradient",
+            },
+            {
+                name: "threejs",
+                color: "yellow-text-gradient",
+            },
+            {
+                name: "wagmi",
+                color: "purple-text-gradient",
+            },
         ],
-        image: carrent,
-        source_code_link: "https://github.com/",
+        image: blockdefi,
+        source_code_link: "https://github.com/s1xp4c/BlockDefi",
     },
     {
-        name: "Job IT",
-        description: "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        name: "RocketFuel",
+        description: "Onboarding page for the RocketFuel tokensale and Community outreach platform with Content Management System and Real-time crypto market prices",
         tags: [{
-                name: "react",
+                name: "webflow",
                 color: "blue-text-gradient",
             },
             {
-                name: "restapi",
-                color: "green-text-gradient",
-            },
-            {
-                name: "scss",
-                color: "pink-text-gradient",
-            },
-        ],
-        image: jobit,
-        source_code_link: "https://github.com/",
-    },
-    {
-        name: "Trip Guide",
-        description: "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-        tags: [{
-                name: "nextjs",
-                color: "blue-text-gradient",
-            },
-            {
-                name: "supabase",
+                name: "javascript",
                 color: "green-text-gradient",
             },
             {
                 name: "css",
                 color: "pink-text-gradient",
             },
+            {
+                name: "restapi",
+                color: "cyan-text-gradient",
+            },
+            {
+                name: "photoshop",
+                color: "purple-text-gradient",
+            },
+            {
+                name: "typeform",
+                color: "yellow-text-gradient",
+            },
         ],
-        image: tripguide,
+        image: rocketfuel,
+        source_code_link: "https://github.com/",
+    },
+    {
+        name: "eTuga",
+        description: "Promotion page for the electric vehicle 'The TUGA' and onboarding platform for initial Tokensale.",
+        tags: [{
+                name: "webflow",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "animation",
+                color: "green-text-gradient",
+            },
+            {
+                name: "typeform",
+                color: "pink-text-gradient",
+            },
+        ],
+        image: etuga,
         source_code_link: "https://github.com/",
     },
 ];
