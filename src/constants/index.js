@@ -182,11 +182,11 @@ const experiences = [{
 ];
 
 const testimonials = [{
-        testimonial: "Bla bla bla",
-        name: "Some person1",
-        designation: "Some title1",
-        company: "Some Comany1",
-        image: "https://randomuser.me/api/portraits/women/3.jpg",
+        testimonial: "Morten is pleasant, a social person, and takes initiative. Morten works well with freedom with responsibility and puts good energy into his work. He is capable of analyzing a situation, and take the initiatives necessary to help customers or dismantle an error situation.",
+        name: "Anders Engberg",
+        designation: "Head of IT Operations ",
+        company: "Post Nord AB.",
+        image: "https://randomuser.me/api/portraits/men/1.jpg",
     },
     {
         testimonial: "Bla bla bla",
