@@ -32,7 +32,8 @@
     --input-border-bottom-color: rgb(37, 188, 214);
 }
 
-.form-input-material input {
+.form-input-material input,
+.form-input-material textarea {
     color: white;
 }
 
