@@ -35,6 +35,14 @@ export const navLinks = [{
         title: "Work",
     },
     {
+        id: "projects",
+        title: "Projects",
+    },
+    {
+        id: "testimonials",
+        title: "Testimonials",
+    },
+    {
         id: "contact",
         title: "Contact",
     },
@@ -182,24 +190,24 @@ const experiences = [{
 ];
 
 const testimonials = [{
-        testimonial: "Morten is pleasant, a social person, and takes initiative. Morten works well with freedom with responsibility and puts good energy into his work. He is capable of analyzing a situation, and take the initiatives necessary to help customers or dismantle an error situation.",
+        testimonial: "Morten is pleasant, a social person that takes initiative and works well with freedom with responsibility. \n\nMorten puts good energy into his work and he is capable of analyzing a situation, and take the initiatives necessary to help customers or dismantle an error situation.",
         name: "Anders Engberg",
         designation: "Head of IT Operations ",
         company: "Post Nord AB.",
-        image: "https://randomuser.me/api/portraits/men/1.jpg",
+        image: "https://randomuser.me/api/portraits/men/7.jpg",
     },
     {
-        testimonial: "Bla bla bla",
-        name: "Some person2",
-        designation: "Some title2",
-        company: "Some Comany2",
-        image: "https://randomuser.me/api/portraits/women/5.jpg",
+        testimonial: "Morten has been an outstanding addition to our team at RocketFuel Inc. His expertise as a Frontend developer has been invaluable in creating dynamic and visually stunning user interfaces for our products. \n\nMorten's attention to detail and commitment to delivering high-quality work have exceeded our expectations time and time again",
+        name: "Camilla Jürgensen",
+        designation: "Head of Development",
+        company: "RocketFuel Inc.",
+        image: "https://randomuser.me/api/portraits/women/6.jpg",
     },
     {
-        testimonial: "Bla bla bla",
-        name: "Some person3",
-        designation: "Some title3",
-        company: "Some Comany3",
+        testimonial: "Morten's leadership as a Blockchain consultant and Development Team Leader at BACD USA LLC has been instrumental in driving innovation and growth in the company. His technical knowledge and strategic vision have been invaluable in delivering successful projects and exceeding client expectations.",
+        name: "Kevin Yunai",
+        designation: "Founder and CEO",
+        company: "BACD USA LLC",
         image: "https://randomuser.me/api/portraits/men/4.jpg",
     },
 
@@ -273,11 +281,11 @@ const projects = [{
             },
         ],
         image: rocketfuel,
-        source_code_link: "https://github.com/",
+        source_code_link: "https://github.com/s1xp4c/RKFL_tokensale",
     },
     {
         name: "eTuga",
-        description: "Promotion page for the electric vehicle 'The TUGA' and onboarding platform for initial Tokensale.",
+        description: "Promotion and info page for the innovative electric vehicle 'The TUGA' and onboarding platform for initial Tokensale.",
         tags: [{
                 name: "webflow",
                 color: "blue-text-gradient",
@@ -290,9 +298,21 @@ const projects = [{
                 name: "typeform",
                 color: "pink-text-gradient",
             },
+            {
+                name: "css",
+                color: "orange-text-gradient",
+            },
+            {
+                name: "photoshop",
+                color: "purple-text-gradient",
+            },
+            {
+                name: "javascript",
+                color: "yellow-text-gradient",
+            },
         ],
         image: etuga,
-        source_code_link: "https://github.com/",
+        source_code_link: "https://github.com/s1xp4c/eTuga",
     },
 ];
 
