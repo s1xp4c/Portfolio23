@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import React from "react";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
@@ -20,13 +20,12 @@ const Hero = () => {
               Blockstarter <span className="text-[#915EFF]">Portfolio</span>
             </h1>
             <p className={`${styles.heroSubText} mt-1 text-white-100`}>
-              web3 security, Blockchain and AI interaction,{" "}
+              web3 security, Blockchain and AI integration,{" "}
               <br className="sm:block hidden" />
-              3d Animations, Frontend UI and applications development
+              2D/3D Animations, Frontend UI and applications development
             </p>
           </div>
         </div>
-
         <ComputersCanvas />
         <div className="absolute xs:bottom-5 bottom-22 w-full flex justify-center items-center">
           <a href="#about">

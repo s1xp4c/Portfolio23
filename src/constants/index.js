@@ -183,23 +183,23 @@ const experiences = [{
 
 const testimonials = [{
         testimonial: "Bla bla bla",
-        name: "Some person",
-        designation: "Some title",
-        company: "Some Comany",
+        name: "Some person1",
+        designation: "Some title1",
+        company: "Some Comany1",
         image: "https://randomuser.me/api/portraits/women/3.jpg",
     },
     {
         testimonial: "Bla bla bla",
-        name: "Some person",
-        designation: "Some title",
-        company: "Some Comany",
+        name: "Some person2",
+        designation: "Some title2",
+        company: "Some Comany2",
         image: "https://randomuser.me/api/portraits/women/5.jpg",
     },
     {
         testimonial: "Bla bla bla",
-        name: "Some person",
-        designation: "Some title",
-        company: "Some Comany",
+        name: "Some person3",
+        designation: "Some title3",
+        company: "Some Comany3",
         image: "https://randomuser.me/api/portraits/men/4.jpg",
     },
 

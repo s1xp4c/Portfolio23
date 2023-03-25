@@ -1,11 +1,25 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-
+import * as THREE from "three";
 import CanvasLoader from "../Loader";
 
 const Earth = () => {
   const earth = useGLTF("./planet/scene.gltf");
+
+  React.useEffect(() => {
+    if (earth.scene) {
+      earth.scene.traverse((child) => {
+        if (child.isMesh && child.geometry) {
+          child.geometry.computeBoundingBox();
+          child.geometry.boundingSphere = new THREE.Sphere();
+          child.geometry.boundingSphere.setFromPoints(
+            child.geometry.attributes.position.array
+          );
+        }
+      });
+    }
+  }, [earth]);
 
   return (
     <primitive object={earth.scene} scale={2.3} position-y={0} rotation-y={0} />

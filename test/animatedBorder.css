@@ -1,0 +1,17 @@
+@keyframes input-focus-animation {
+    0% {
+        border-image-slice: 0;
+    }
+    100% {
+        border-image-slice: 1;
+    }
+}
+
+@keyframes input-blur-animation {
+    0% {
+        border-image-slice: 1;
+    }
+    100% {
+        border-image-slice: 0;
+    }
+}

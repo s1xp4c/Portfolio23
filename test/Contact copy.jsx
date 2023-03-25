@@ -2,10 +2,10 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { useToast } from "@chakra-ui/react";
-import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
-import { SectionWrapper } from "../hoc";
-import { slideIn } from "../utils/motion";
+import { styles } from "../src/styles";
+import { EarthCanvas } from "../src/components/canvas";
+import { SectionWrapper } from "../src/hoc";
+import { slideIn } from "../src/utils/motion";
 
 const Contact = () => {
   const toast = useToast();
@@ -17,19 +17,6 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const [focused, setFocused] = useState(false);
-
-  const handleFocus = () => {
-    setFocused(true);
-  };
-
-  const handleBlur = () => {
-    setFocused(false);
-  };
-
-  const inputClassName = `bg-tertiary py-4 px-6 w-full border-[1px] rounded-lg font-medium  ${
-    focused ? "draw " : ""
-  }`;
 
   const handleChange = (e) => {
     const { target } = e;
@@ -102,77 +89,65 @@ const Contact = () => {
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-transparent p-8 rounded-2xl "
+        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={`${styles.sectionHeadText} mb-4`}>Contact.</h3>
-        <div className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
-          <form
-            ref={formRef}
-            onSubmit={handleSubmit}
-            className="login-form bg-tertiary rounded-[20px]"
-          >
-            <div className="form-input-material ">
+        <h3 className={styles.sectionHeadText}>Contact.</h3>
+
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          className="mt-120 flex flex-col gap-0"
+        >
+          <label className="flex flex-col">
+            <span className="text-white font-medium mb-0 mt-4">Your Name</span>
+            <div className={styles.inputFocus}>
               <input
                 type="text"
                 name="name"
-                id="name"
                 value={form.name}
                 onChange={handleChange}
-                placeholder=" "
-                className={`${inputClassName} form-control-material`}
-                autoComplete="off"
-                required
-                onFocus={() => handleFocus()}
-                onBlur={() => handleBlur()}
+                placeholder="Who is writing me?"
+                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-2 border-transparent font-medium w-full z-0"
               />
-              <label htmlFor="name" className="">
-                Your Name
-              </label>
             </div>
-            <div className="form-input-material">
+          </label>
+          <label className="flex flex-col">
+            <span className="text-white font-medium mb-0 mt-4">Your email</span>
+            <div className={styles.inputFocus}>
               <input
                 type="email"
                 name="email"
-                id="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder=" "
-                className={`${inputClassName} form-control-material`}
-                autoComplete="off"
-                required
-                onFocus={() => handleFocus()}
-                onBlur={() => handleBlur()}
+                placeholder="What's your email address?"
+                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-2 border-transparent font-medium w-full z-0"
               />
-              <label htmlFor="email" className="">
-                Your email
-              </label>
             </div>
-            <div className="form-input-material">
+          </label>
+          <label className="flex flex-col">
+            <span className="text-white font-medium mb-0 mt-4">
+              Your Message
+            </span>
+            <div className={styles.inputFocus}>
               <textarea
                 rows={5}
                 name="message"
-                id="message"
                 value={form.message}
                 onChange={handleChange}
-                placeholder=" "
-                className={`${inputClassName} form-control-material`}
-                autoComplete="off"
-                required
-                onFocus={() => handleFocus()}
-                onBlur={() => handleBlur()}
+                placeholder="What would you like to get in touch about?"
+                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-2 border-transparent font-medium w-full z-0"
               />
-              <label htmlFor="message" className="">
-                Your Message
-              </label>
             </div>
-            <div className="w-full green-pink-gradient p-[1px] rounded-[10px] shadow-card btn-wrap mt-6">
-              <button type="submit" className="btn bg-tertiary">
-                {loading ? "Sending..." : "Send"}
-              </button>
-            </div>
-          </form>
-        </div>
+          </label>
+
+          <button
+            type="submit"
+            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary w-full border-2 border-transparent"
+          >
+            {loading ? "Sending..." : "Send"}
+          </button>
+        </form>
       </motion.div>
 
       <motion.div
