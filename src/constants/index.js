@@ -24,6 +24,9 @@ import {
     rocketfuel,
     threejs,
     cbs,
+    kevinyunai,
+    andersengberg,
+    marialerche,
 } from "../assets";
 
 export const navLinks = [{
@@ -194,21 +197,21 @@ const testimonials = [{
         name: "Anders Engberg",
         designation: "Head of IT Operations ",
         company: "Post Nord AB.",
-        image: "https://randomuser.me/api/portraits/men/7.jpg",
+        image: andersengberg,
     },
     {
-        testimonial: "Morten has been an outstanding addition to our team at RocketFuel Inc. His expertise as a Frontend developer has been invaluable in creating dynamic and visually stunning user interfaces for our products. \n\nMorten's attention to detail and commitment to delivering high-quality work have exceeded our expectations time and time again",
-        name: "Camilla Jürgensen",
-        designation: "Head of Development",
-        company: "RocketFuel Inc.",
-        image: "https://randomuser.me/api/portraits/women/6.jpg",
+        testimonial: "Some awesome stuff about Morten",
+        name: "Maria Lerche",
+        designation: "Some job",
+        company: "Some organistation (Roskilde?) ",
+        image: marialerche,
     },
     {
         testimonial: "Morten's leadership as a Blockchain consultant and Development Team Leader at BACD USA LLC has been instrumental in driving innovation and growth in the company. His technical knowledge and strategic vision have been invaluable in delivering successful projects and exceeding client expectations.",
         name: "Kevin Yunai",
         designation: "Founder and CEO",
         company: "BACD USA LLC",
-        image: "https://randomuser.me/api/portraits/men/4.jpg",
+        image: kevinyunai,
     },
 
 ];

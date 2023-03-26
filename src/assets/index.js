@@ -32,6 +32,10 @@ import blockdefi from "./blockdefi.png";
 import etuga from "./etuga.png";
 import rocketfuel from "./rocketfuel.png";
 
+import andersengberg from "./andersengberg.jpeg";
+import kevinyunai from "./kevinyunai.jpg";
+import marialerche from "./marialerche.jpg";
+
 export {
     logoPurple,
     backend,
@@ -63,4 +67,7 @@ export {
     rocketfuel,
     cbs,
     linkwhite,
+    andersengberg,
+    kevinyunai,
+    marialerche
 };

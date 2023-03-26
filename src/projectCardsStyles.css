@@ -1,0 +1,31 @@
+.project-link-back {
+    box-shadow: 0 0 4px 4px #bf61ff;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 4px 4px #bf61ff;
+    }
+    50% {
+        box-shadow: 0 0 7px 7px rgba(51, 219, 177, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 4px 4px #bf61ff;
+    }
+}
+
+.project-link-back:hover {
+    border: 4px dotted #00cea8;
+    box-shadow: none;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

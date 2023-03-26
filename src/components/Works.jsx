@@ -47,7 +47,7 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div
-      className=""
+      className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
       variants={fadeIn("up", "spring", index * 0.5, 0.75)}
       style={{ minHeight: "300px" }}
     >
@@ -56,20 +56,20 @@ const ProjectCard = ({
         tiltMaxAngleY={35}
         scale={1}
         transitionSpeed={450}
-        className="bg-tertiary p-5 rounded-2xl"
+        className="bg-tertiary p-5 rounded-[20px]"
         style={{ height: "100%" }}
       >
         <div className="relative w-full h-[230px]">
           <img
             src={image}
             alt="project_image"
-            className="w-full h-full object-cover rounded-2xl"
+            className="w-full h-full object-cover rounded-[20px]"
           />
           <div className="absolute inset-0 flex justify-between">
-            <div className="flex justify-start m-3 card-img_hover github-source">
+            <div className="flex justify-start m-3 card-img_hover">
               <div
                 onClick={() => window.open(source_code_link, "_blank")}
-                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer project-link-back"
               >
                 <img
                   src={github}
@@ -78,10 +78,10 @@ const ProjectCard = ({
                 />
               </div>
             </div>
-            <div className="flex justify-end m-3 card-img_hover link-away">
+            <div className="flex justify-end m-3 card-img_hover">
               <div
                 onClick={() => window.open(page_link, "_blank")}
-                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer project-link-back"
               >
                 <img
                   src={linkwhite}

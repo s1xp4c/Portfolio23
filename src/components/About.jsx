@@ -9,8 +9,8 @@ import { fadeIn, textVariant } from "../utils/motion";
 
 const ServiceCard = ({ index, title, icon }) => (
   <ParallaxTilt
-    tiltMaxAngleX={45}
-    tiltMaxAngleY={45}
+    tiltMaxAngleX={50}
+    tiltMaxAngleY={50}
     scale={1}
     transitionSpeed={450}
     className="xs:w-[250px] w-full"
@@ -23,7 +23,7 @@ const ServiceCard = ({ index, title, icon }) => (
         <img
           src={icon}
           alt="web-development"
-          className="w-16 h-16 object-contain"
+          className="w-26 h-26 object-contain"
         />
 
         <h3 className="text-white text-[20px] font-bold text-center">
