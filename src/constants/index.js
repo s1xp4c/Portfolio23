@@ -251,6 +251,7 @@ const projects = [{
         ],
         image: blockdefi,
         source_code_link: "https://github.com/s1xp4c/BlockDefi",
+        page_link: "https://blockdefi.netlify.app/",
     },
     {
         name: "RocketFuel",
@@ -282,6 +283,7 @@ const projects = [{
         ],
         image: rocketfuel,
         source_code_link: "https://github.com/s1xp4c/RKFL_tokensale",
+        page_link: "https://token.rocketfuelblockchain.com/",
     },
     {
         name: "eTuga",
@@ -313,6 +315,7 @@ const projects = [{
         ],
         image: etuga,
         source_code_link: "https://github.com/s1xp4c/eTuga",
+        page_link: "https://www.etuga.io/",
     },
 ];
 

@@ -6,6 +6,7 @@ import web3 from "./web3.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+import linkwhite from "./linkwhite.png";
 
 import css from "./tech/css.png";
 import chakra from "./tech/chakra.jpeg";
@@ -61,4 +62,5 @@ export {
     etuga,
     rocketfuel,
     cbs,
+    linkwhite,
 };
