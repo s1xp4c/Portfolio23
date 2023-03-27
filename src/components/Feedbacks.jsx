@@ -51,13 +51,15 @@ const FeedbackCard = ({
 
 const Feedbacks = () => {
   return (
-    <div className={"mt-8 bg-tertiary-blur rounded-[20px]"}>
+    <div className={"mt-8 bg-card-gradient-bottom-right rounded-[20px]"}>
       <div
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px] flex flex-col justify-end`}
       >
         <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>What others say</p>
-          <h2 className={styles.sectionHeadText}>Testimonials.</h2>
+          <div className="p-10">
+            <p className={styles.sectionSubText}>What others say</p>
+            <h2 className={`${styles.sectionHeadText} pb-6`}>Testimonials.</h2>
+          </div>
         </motion.div>
         <div className={`-mt-30 pb-14 ${styles.paddingX} flex flex-wrap gap-3`}>
           {testimonials.map((testimonial, index) => (

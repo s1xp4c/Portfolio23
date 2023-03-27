@@ -124,7 +124,7 @@ const technologies = [{
 ];
 
 const experiences = [{
-        title: "Development Team Lead",
+        title: "Frontend Developer and\nDevelopment Team Leader",
         company_name: "BACD USA LLC",
         icon: bacd,
         iconBg: "#E6DEDD",
@@ -134,9 +134,8 @@ const experiences = [{
             "Developing and maintaining decentralized web applications using React.js and other related technologies.",
             "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
             "Developing and implementing DApps and Websites for our customers.",
-            "Participating in code reviews.",
             "Handling DNS and Proxy server settings.",
-            "End level customer support and Frontend developer.",
+            "End level customer support and Frontend development.",
         ],
     },
     {
@@ -159,7 +158,7 @@ const experiences = [{
         points: [
             "Web Administration.",
             "Intranet Administration.",
-            "Smartboards and Laptop repairs and Support.",
+            "Smartboards and Laptop hardware repairs and Support.",
             "Systems Remote Deployment.",
             "End Level IT Support.",
             "IT Security.",
@@ -193,19 +192,19 @@ const experiences = [{
 ];
 
 const testimonials = [{
-        testimonial: "Morten is pleasant, a social person that takes initiative and works well with freedom with responsibility. \n\nMorten puts good energy into his work and he is capable of analyzing a situation, and take the initiatives necessary to help customers or dismantle an error situation.",
+        testimonial: "Morten is a pleasant and social person that takes initiative and works well with freedom with responsibility. \n\nMorten puts good energy into his work and he is capable of analyzing a situation, and take the initiatives necessary to help customers or dismantle an error situation.",
         name: "Anders Engberg",
         designation: "Head of IT Operations ",
         company: "Post Nord AB.",
         image: andersengberg,
     },
-    {
-        testimonial: "Some awesome stuff about Morten",
-        name: "Maria Lerche",
-        designation: "Some job",
-        company: "Some organistation (Roskilde?) ",
-        image: marialerche,
-    },
+    // {
+    //     testimonial: "Some awesome stuff about Morten",
+    //     name: "Maria Lerche",
+    //     designation: "Some job",
+    //     company: "Some organistation (Roskilde?) ",
+    //     image: marialerche,
+    // },
     {
         testimonial: "Morten's leadership as a Blockchain consultant and Development Team Leader at BACD USA LLC has been instrumental in driving innovation and growth in the company. His technical knowledge and strategic vision have been invaluable in delivering successful projects and exceeding client expectations.",
         name: "Kevin Yunai",
