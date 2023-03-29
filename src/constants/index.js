@@ -201,10 +201,10 @@ const testimonials = [{
         iphone: phone,
     },
     {
-        testimonial: "Some awesome stuff about Morten",
+        testimonial: "Marias experience working with Morten",
         name: "Maria Lerche",
-        designation: "Some job",
-        company: "Some organistation (Roskilde?) ",
+        designation: "Job",
+        company: "Organistation",
         image: marialerche,
         iphone: phone,
 

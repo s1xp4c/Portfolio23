@@ -29,7 +29,7 @@ const FeedbackCard = ({
     <div className="flex flex-col pt-18 w-[300px] ">
       <div className=" p-8 rounded-3xl min-h-[405px] ">
         <p className="text-white font-black text-[42px]">"</p>
-        <p className="text-white tracking-wider text-[15px] w-full whitespace-pre-line ">
+        <p className="text-white tracking-wider text-[14px] w-full whitespace-pre-line ">
           {testimonial}
         </p>
       </div>
