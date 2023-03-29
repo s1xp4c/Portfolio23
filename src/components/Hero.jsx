@@ -17,10 +17,10 @@ const Hero = () => {
 
           <div>
             <h1 className={`${styles.heroHeadText} text-white`}>
-              Blockstarter <span className="text-[#915EFF]">Portfolio</span>
+              My <span className="text-[#915EFF]">Portfolio</span>
             </h1>
             <p className={`${styles.heroSubText} mt-1 text-white-100`}>
-              web3 security, Blockchain and AI integration,{" "}
+              I do web3 security, Blockchain and AI integration,{" "}
               <br className="sm:block hidden" />
               2D/3D Animations, Frontend UI and applications development
             </p>
