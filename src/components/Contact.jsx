@@ -44,6 +44,22 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+    // check if any required fields are empty
+    if (!form.name || !form.email || !form.message) {
+      toast({
+        position: "top",
+        title: "Error!",
+        description: "Please fill in all required fields.",
+        status: "error",
+        duration: 3000,
+        isClosable: false,
+        variant: "solid",
+        zIndex: "10",
+      });
+      return;
+    }
+
+    setLoading(true);
 
     emailjs
       .send(
@@ -102,7 +118,7 @@ const Contact = () => {
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-transparent p-8 rounded-2xl "
+        className="flex-[0.75] bg-transparent p-1 rounded-2xl "
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={`${styles.sectionHeadText} mb-4`}>Contact.</h3>
