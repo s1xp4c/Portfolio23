@@ -24,7 +24,8 @@ const Works = () => {
           real-world examples of my work. Each project is briefly described with
           links to code repositories and live demos in it. It reflects my
           ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
+          and manage projects effectively. Feel free to use the links in the top
+          right corners for sites and source-codes.
         </motion.p>
       </div>
       <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9">

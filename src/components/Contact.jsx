@@ -8,7 +8,19 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
 const Contact = () => {
-  const toast = useToast();
+  const toast = useToast({
+    position: "bottom",
+    title: "Succes!",
+    containerStyle: {
+      width: "800px",
+      maxWidth: "100%",
+    },
+    duration: 3000,
+    status: "success",
+    variant: "left-accent",
+    description: "I will get back to you as soon as possible.",
+  });
+
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
@@ -46,16 +58,6 @@ const Contact = () => {
     setLoading(true);
     // check if any required fields are empty
     if (!form.name || !form.email || !form.message) {
-      toast({
-        position: "top",
-        title: "Error!",
-        description: "Please fill in all required fields.",
-        status: "error",
-        duration: 3000,
-        isClosable: false,
-        variant: "solid",
-        zIndex: "10",
-      });
       return;
     }
 
@@ -78,15 +80,10 @@ const Contact = () => {
         () => {
           setLoading(false);
           toast({
-            position: "top",
-            title: "Succes! - Your email has been sent",
-            description:
-              "Thank you. I will get back to you as soon as possible.",
-            status: "success",
-            duration: 3000,
-            isClosable: false,
-            variant: "solid",
-            zIndex: "10",
+            containerStyle: {
+              border: "1px solid green.200",
+              isClosable: false,
+            },
           });
 
           setForm({
