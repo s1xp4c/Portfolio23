@@ -27,6 +27,7 @@ import {
     kevinyunai,
     andersengberg,
     marialerche,
+    phone,
 } from "../assets";
 
 export const navLinks = [{
@@ -197,20 +198,24 @@ const testimonials = [{
         designation: "Head of IT Operations ",
         company: "Post Nord AB.",
         image: andersengberg,
+        iphone: phone,
     },
-    // {
-    //     testimonial: "Some awesome stuff about Morten",
-    //     name: "Maria Lerche",
-    //     designation: "Some job",
-    //     company: "Some organistation (Roskilde?) ",
-    //     image: marialerche,
-    // },
+    {
+        testimonial: "Some awesome stuff about Morten",
+        name: "Maria Lerche",
+        designation: "Some job",
+        company: "Some organistation (Roskilde?) ",
+        image: marialerche,
+        iphone: phone,
+
+    },
     {
         testimonial: "Morten's leadership as a Blockchain consultant and Development Team Leader at BACD USA LLC has been instrumental in driving innovation and growth in the company. His technical knowledge and strategic vision have been invaluable in delivering successful projects and exceeding client expectations.",
         name: "Kevin Yunai",
         designation: "Founder and CEO",
         company: "BACD USA LLC",
         image: kevinyunai,
+        iphone: phone,
     },
 
 ];
