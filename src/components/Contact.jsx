@@ -199,7 +199,9 @@ const Contact = () => {
                 htmlFor="my_file"
                 onClick={() => handleAttachClick()}
               >
-                {isAttached ? "Attach a different file?" : "Attach file"}
+                {isAttached
+                  ? "Attach a different file?"
+                  : "Attach file (max: 500kb)"}
               </label>
             </div>
             {isAttached ? (
