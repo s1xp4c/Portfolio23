@@ -21,29 +21,36 @@ const Contact = () => {
     description: "I will get back to you as soon as possible.",
   });
 
+  const formRef = useRef();
   const [form, setForm] = useState({
-    from_name: "",
-    to_name: import.meta.env.VITE_APP_EMAIL_TO,
-    from_email: "",
-    to_email: import.meta.env.VITE_APP_EMAIL_ACCOUNT,
+    name: "",
+    email: "",
     message: "",
-    my_file: null,
-    my_fileName: "",
+    attachment: "",
   });
-  const formRef = useRef(form);
 
   const [loading, setLoading] = useState(false);
-  const [isAttached, setIsAttached] = useState(false);
+  const [focused, setFocused] = useState(false);
 
-  const inputClassName = `bg-tertiary py-4 px-6 w-full border-[1px] rounded-lg font-medium`;
+  const handleFocus = () => {
+    setFocused(true);
+  };
+
+  const handleBlur = () => {
+    setFocused(false);
+  };
+
+  const inputClassName = `bg-tertiary py-4 px-6 w-full border-[1px] rounded-lg font-medium  ${
+    focused ? "draw " : ""
+  }`;
 
   const handleChange = (e) => {
     const { target } = e;
     const { name, value } = target;
-    if (name === "my_file") {
+    if (name === "attachment") {
       setForm({
         ...form,
-        my_file: e.target.files[0],
+        attachment: e.target.files[0],
       });
     } else {
       setForm({
@@ -53,28 +60,32 @@ const Contact = () => {
     }
   };
 
-  const handleAttachClick = () => {
-    setIsAttached(true);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     // check if any required fields are empty
-    if (!form.from_name || !form.from_email || !form.message) {
+    if (!form.name || !form.email || !form.message) {
       return;
     }
 
+    setLoading(true);
+
     emailjs
-      .sendForm(
+      .send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        formRef.current,
+        {
+          from_name: form.name,
+          to_name: import.meta.env.VITE_APP_EMAIL_TO,
+          from_email: form.email,
+          to_email: import.meta.env.VITE_APP_EMAIL_ACCOUNT,
+          message: form.message,
+          attachment: form.attachment,
+        },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
-        (result) => {
-          console.log(result.text);
+        () => {
           setLoading(false);
           toast({
             containerStyle: {
@@ -84,19 +95,14 @@ const Contact = () => {
           });
 
           setForm({
-            from_name: "",
-            to_name: import.meta.env.VITE_APP_EMAIL_TO,
-            from_email: "",
-            to_email: import.meta.env.VITE_APP_EMAIL_ACCOUNT,
+            name: "",
+            email: "",
             message: "",
-            my_file: null,
-            my_fileName: "",
           });
-          setIsAttached(false);
         },
         (error) => {
           setLoading(false);
-          console.error(error.text);
+          console.error(error);
           toast({
             position: "top",
             title: "Error!",
@@ -126,44 +132,46 @@ const Contact = () => {
             ref={formRef}
             onSubmit={handleSubmit}
             className="mail-form bg-tertiary rounded-[20px]"
-            encType="multipart/form-data"
           >
             <div className="form-input-material ">
               <input
                 type="text"
-                name="from_name"
-                id="from_name"
-                value={form.from_name}
+                name="name"
+                id="name"
+                value={form.name}
                 onChange={handleChange}
                 placeholder=" "
                 className={`${inputClassName} form-control-material`}
                 autoComplete="off"
                 required
+                onFocus={() => handleFocus()}
+                onBlur={() => handleBlur()}
               />
-              <label htmlFor="from_name" className="">
+              <label htmlFor="name" className="">
                 Your Name
               </label>
             </div>
             <div className="form-input-material">
               <input
                 type="email"
-                name="from_email"
-                id="from_email"
-                value={form.from_email}
+                name="email"
+                id="email"
+                value={form.email}
                 onChange={handleChange}
                 placeholder=" "
                 className={`${inputClassName} form-control-material`}
                 autoComplete="off"
                 required
+                onFocus={() => handleFocus()}
+                onBlur={() => handleBlur()}
               />
-              <label htmlFor="from_email" className="">
+              <label htmlFor="email" className="">
                 Your email
               </label>
             </div>
             <div className="form-input-material">
               <textarea
                 rows={5}
-                type="text"
                 name="message"
                 id="message"
                 value={form.message}
@@ -172,45 +180,29 @@ const Contact = () => {
                 className={`${inputClassName} form-control-material`}
                 autoComplete="off"
                 required
+                onFocus={() => handleFocus()}
+                onBlur={() => handleBlur()}
               />
               <label htmlFor="message" className="">
                 Your Message
               </label>
             </div>
-            <div className="w-full">
+            <div className="form-input-material">
               <input
                 type="file"
-                name="my_file"
-                id="my_file"
-                className="hidden w-full"
-                onChange={(event) => {
-                  const file = event.target.files[0];
-                  setForm({
-                    ...form,
-                    my_file: file,
-                    my_fileName: file ? file.name : null,
-                  });
-                }}
+                name="attachment"
+                id="attachment"
+                className="hidden"
+                onFocus={() => handleFocus()}
+                onBlur={() => handleBlur()}
               />
-            </div>
-            <div className="w-full green-pink-gradient p-[1px] mt-6 rounded-[10px] shadow-card btn-wrap">
-              <label
-                className="btn bg-tertiary p-[0px] "
-                htmlFor="my_file"
-                onClick={() => handleAttachClick()}
-              >
-                {isAttached ? "Attach a different file?" : "Attach file"}
+              <span className="file-name">
+                {form.attachment ? form.attachment.name : "No file chosen"}
+              </span>
+              <label htmlFor="attachment" className="custom-file-upload">
+                Choose file
               </label>
             </div>
-            {isAttached ? (
-              <span className="file-name mt-3 w-full font-small">
-                {form.my_fileName}
-              </span>
-            ) : (
-              <span className="no-file mt-3 w-full font-small">
-                {"No file chosen"}
-              </span>
-            )}
             <div className="w-full green-pink-gradient p-[1px] rounded-[10px] shadow-card btn-wrap mt-6">
               <button type="submit" className="btn bg-tertiary">
                 {loading ? "Sending..." : "Send"}

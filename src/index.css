@@ -45,10 +45,6 @@
     --green-pink-gradient: linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
 }
 
-.stroke-green-pink-gradient {
-    stroke: linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-}
-
 .black-gradient {
     background: #000000;
     /* fallback for old browsers */
