@@ -143,7 +143,7 @@ const experiences = [{
         title: "IT Supporter",
         company_name: "Hvidovre Hospital",
         icon: hvidovrehospital,
-        iconBg: "white",
+        iconBg: "#E6DEDD",
         date: "2015 - 2017",
         points: [
             "Installation and Deployment of IT Systems.",
@@ -154,7 +154,7 @@ const experiences = [{
         title: "IT Supporter",
         company_name: "Copenhagen Municipallity",
         icon: kbhkommune,
-        iconBg: "white",
+        iconBg: "#E6DEDD",
         date: "2013 - 2015",
         points: [
             "Web Administration.",
@@ -168,7 +168,7 @@ const experiences = [{
         title: "IT Systems Technician",
         company_name: "Post Nord AB Systems Information Management",
         icon: postnord,
-        iconBg: "white",
+        iconBg: "#E6DEDD",
         date: "2004 - 2013",
         points: [
             "Insourcing and Consolidation of IT Systems.",
@@ -181,7 +181,7 @@ const experiences = [{
         title: "Web Administrator",
         company_name: "Copenhagen Business School",
         icon: cbs,
-        iconBg: "white",
+        iconBg: "#E6DEDD",
         date: "1999 - 2001",
         points: [
             "Web Development and Administration.",
