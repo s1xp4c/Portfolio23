@@ -10,7 +10,6 @@ function BackgroundAnimation() {
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    ctx.globalAlpha = 0.4; // Set the global alpha value to 40%
 
     let particlesArray;
 
@@ -43,7 +42,8 @@ function BackgroundAnimation() {
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-        ctx.fillStyle = "transparent";
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = 0.3; // Set the global alpha value to 40%
         ctx.fill();
         ctx.strokeStyle = "rgba(145, 94, 255";
         ctx.stroke();

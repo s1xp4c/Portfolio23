@@ -2,9 +2,36 @@ import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
+import PropTypes from "prop-types";
+import * as THREE from "three";
+
+const COMPUTERS_MODEL_PATH = "./desktop_pc/scene.gltf";
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  const computer = useGLTF(COMPUTERS_MODEL_PATH);
+
+  useEffect(() => {
+    if (computer?.scene) {
+      computer.scene.traverse((child) => {
+        if (child.isMesh && child.geometry) {
+          if (child.geometry.attributes.position) {
+            child.geometry.computeBoundingBox();
+            child.geometry.boundingSphere = new THREE.Sphere();
+            const points = [];
+            for (let i = 0; i < child.geometry.attributes.position.count; i++) {
+              points.push(
+                new THREE.Vector3().fromBufferAttribute(
+                  child.geometry.attributes.position,
+                  i
+                )
+              );
+            }
+            child.geometry.boundingSphere.setFromPoints(points);
+          }
+        }
+      });
+    }
+  }, [computer]);
 
   return (
     <mesh>
@@ -28,12 +55,16 @@ const Computers = ({ isMobile }) => {
   );
 };
 
+Computers.propTypes = {
+  isMobile: PropTypes.bool.isRequired,
+};
+
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const mediaQuery = window.matchMedia("(max-width: 800px)");
 
     // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);

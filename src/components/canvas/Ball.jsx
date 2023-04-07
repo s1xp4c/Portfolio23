@@ -17,15 +17,26 @@ const Ball = (props) => {
   const onMeshCreated = (mesh) => {
     if (mesh.geometry) {
       mesh.geometry.computeBoundingBox();
+
+      const positionArray = mesh.geometry.attributes.position.array;
+      const points = [];
+      for (let i = 0; i < positionArray.length; i += 3) {
+        points.push(
+          new THREE.Vector3(
+            positionArray[i],
+            positionArray[i + 1],
+            positionArray[i + 2]
+          )
+        );
+      }
+
       mesh.geometry.boundingSphere = new THREE.Sphere();
-      mesh.geometry.boundingSphere.setFromPoints(
-        mesh.geometry.attributes.position.array
-      );
+      mesh.geometry.boundingSphere.setFromPoints(points);
     }
   };
 
   return (
-    <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
+    <Float speed={2.75} rotationIntensity={1} floatIntensity={2}>
       <ambientLight intensity={0.25} />
       <directionalLight position={[0, 0, 0.05]} />
       <mesh castShadow receiveShadow scale={2.75} ref={onMeshCreated}>
@@ -37,7 +48,7 @@ const Ball = (props) => {
           flatShading={true}
         />
         <Decal
-          position={[0, 0, 1]}
+          position={[0.1, 0.1, 1]}
           rotation={[2 * Math.PI, 0, 6.25]}
           scale={1}
           map={decal}
@@ -52,7 +63,7 @@ const BallCanvas = ({ icon }) => {
   return (
     <Canvas
       className="cursor-move"
-      frameloop="demand"
+      frameloop="always"
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
     >

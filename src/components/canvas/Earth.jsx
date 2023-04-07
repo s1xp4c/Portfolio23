@@ -1,29 +1,56 @@
-import React, { Suspense } from "react";
+import React, { useEffect, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import CanvasLoader from "../Loader";
 
 const Earth = () => {
-  const earth = useGLTF("./planet/scene.gltf");
+  const { scene } = useGLTF("./planet/scene.gltf");
 
-  React.useEffect(() => {
-    if (earth.scene) {
-      earth.scene.traverse((child) => {
+  useEffect(() => {
+    if (scene) {
+      scene.traverse((child) => {
         if (child.isMesh && child.geometry) {
-          child.geometry.computeBoundingBox();
-          child.geometry.boundingSphere = new THREE.Sphere();
-          child.geometry.boundingSphere.setFromPoints(
-            child.geometry.attributes.position.array
-          );
+          if (child.geometry.attributes.position) {
+            child.geometry.computeBoundingBox();
+
+            // Check for NaN values in the position array
+            const positionArray = child.geometry.attributes.position.array;
+            const hasNaNValues = positionArray.some((value) => isNaN(value));
+
+            if (!hasNaNValues) {
+              child.geometry.boundingSphere = new THREE.Sphere();
+              const points = [];
+              for (let i = 0; i < positionArray.length; i += 3) {
+                points.push(
+                  new THREE.Vector3(
+                    positionArray[i],
+                    positionArray[i + 1],
+                    positionArray[i + 2]
+                  )
+                );
+              }
+              child.geometry.boundingSphere.setFromPoints(points);
+            } else {
+              // Replace the geometry with a simple sphere if the position array contains NaN values
+              const radius = 1;
+              const widthSegments = 32;
+              const heightSegments = 32;
+              const geometry = new THREE.BufferGeometry(
+                radius,
+                widthSegments,
+                heightSegments
+              );
+              child.geometry.dispose();
+              child.geometry = geometry;
+            }
+          }
         }
       });
     }
-  }, [earth]);
+  }, [scene]);
 
-  return (
-    <primitive object={earth.scene} scale={2.3} position-y={0} rotation-y={0} />
-  );
+  return <primitive object={scene} scale={2.5} position={[0.6, -0.4, 0]} />;
 };
 
 const EarthCanvas = () => {
@@ -31,14 +58,14 @@ const EarthCanvas = () => {
     <Canvas
       className="cursor-move"
       shadows
-      frameloop="demand"
+      frameloop="always"
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
       camera={{
         fov: 45,
         near: 0.1,
         far: 200,
-        position: [-4, 3, 6],
+        position: [4, 3, 6],
       }}
     >
       <Suspense fallback={<CanvasLoader />}>
@@ -49,7 +76,6 @@ const EarthCanvas = () => {
           minPolarAngle={Math.PI / 2}
         />
         <Earth />
-
         <Preload all />
       </Suspense>
     </Canvas>
