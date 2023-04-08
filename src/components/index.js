@@ -1,4 +1,4 @@
-import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas, BackgroundAnimation, RotationIndicator } from './canvas';
+import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas, BackgroundAnimation } from './canvas';
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import About from "./About";
@@ -25,5 +25,4 @@ export {
     ComputersCanvas,
     StarsCanvas,
     BackgroundAnimation,
-    RotationIndicator
 };

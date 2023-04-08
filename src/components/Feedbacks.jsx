@@ -20,38 +20,36 @@ const FeedbackCard = ({
     className={`rounded-[50px] mt-12 `}
     style={{
       backgroundImage: `url(${iphone})`,
-      backgroundSize: "contain",
+      backgroundSize: "cover",
       filter: "brightness(100%) saturate(200%) hue-rotate(-340deg)",
       backgroundColor: "#151030",
       backgroundBlendMode: "multiply",
     }}
   >
-    <div className="flex flex-col pt-18 w-[300px] ">
+    <div className="flex flex-col pt-25 w-[350px] ">
       <div className=" p-8 rounded-3xl min-h-[405px] ">
-        <p className="text-white font-black text-[42px]">"</p>
-        <p className="text-white tracking-wider text-[14px] w-full whitespace-pre-line ">
+        <p className="text-white tracking-wider text-[17px] w-full whitespace-pre-line ">
           {testimonial}
         </p>
       </div>
-
-      <div className=" justify-center  flex flex-col p-8 rounded-3xl  w-full">
-        <div className=" flex flex-row items-center ">
-          <div className="flex-1 flex flex-col">
-            <p className="text-white font-medium text-[16px]">
-              <span className="blue-text-gradient">{"@ "}</span> {name}
-            </p>
-            <p className="mt-1 text-secondary text-[12px]">
-              {designation} <br></br>
-              <span className="text-[15px] blue-text-gradient">{company}</span>
-            </p>
-          </div>
-
-          <img
-            src={image}
-            alt={`feedback_by-${name}`}
-            className="w-14 h-14 rounded-full object-cover"
-          />
+    </div>
+    <div className=" justify-center flex flex-col p-8 rounded-3xl  w-full">
+      <div className="pb-20 flex flex-row items-center ">
+        <div className="flex-1 flex flex-col">
+          <p className="text-white font-medium text-[17px]">
+            <span className="blue-text-gradient">{"@ "}</span> {name}
+          </p>
+          <p className="mt-1 text-secondary text-[15px]">
+            {designation} <br></br>
+            <span className="text-[15px] blue-text-gradient">{company}</span>
+          </p>
         </div>
+
+        <img
+          src={image}
+          alt={`feedback_by-${name}`}
+          className="w-17 h-17 rounded-full object-cover"
+        />
       </div>
     </div>
   </motion.div>
