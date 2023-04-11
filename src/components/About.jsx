@@ -58,23 +58,6 @@ const About = () => {
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
-      {/* <div className="absolute xs:bottom-5 bottom-0 w-full flex justify-center items-center pr-12">
-        <a href="#work" className="w-[35px] h-[64px]">
-          <div className="w-[35px] h-[64px] rounded-3xl border-2 border-secondary flex justify-center items-start p-3 border-t-[#915EFF] border-b-[#915EFF] border-[transparent]">
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 2.3,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="h-0 w-0 border-x-8 border-x-transparent border-t-[16px] border-t-[#915EFF] mb-1"
-            />
-          </div>
-        </a>
-      </div> */}
     </>
   );
 };
