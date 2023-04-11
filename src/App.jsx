@@ -17,7 +17,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <div className="relative z-0 bg-primary">
+        <div className="relative z-0 bg-primary overscroll-contain">
           <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
             <Navbar />
             <div className="fixed z-0">
@@ -30,7 +30,7 @@ const App = () => {
           <Tech />
           <Works />
           <Feedbacks />
-          <div className="relative z-0 overflow-hidden">
+          <div className="relative z-0">
             <Contact />
             <StarsCanvas />
           </div>
