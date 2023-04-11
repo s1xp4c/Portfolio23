@@ -28,6 +28,8 @@ import {
     andersengberg,
     marialerche,
     phone,
+    github,
+    linkwhite,
 } from "../assets";
 
 export const navLinks = [{
@@ -67,6 +69,19 @@ const services = [{
     {
         title: "2d & 3d Content",
         icon: creator,
+    },
+];
+const footies = [{
+        title: "Site by Morten Six",
+        icon: git,
+        icon2: linkwhite,
+        page_link: "https://www.linkedin.com/in/morten-six/",
+    },
+    {
+        title: "Source code on github ",
+        icon: github,
+        icon2: linkwhite,
+        page_link: "https://github.com/s1xp4c/Portfolio23",
     },
 ];
 
@@ -326,4 +341,4 @@ const projects = [{
     },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, testimonials, projects, footies };

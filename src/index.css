@@ -66,6 +66,12 @@
     background: linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
 }
 
+.green-transparent-pink-gradient {
+    background: "#00cea8";
+    background: -webkit-linear-gradient(-110.13deg, #00cea8 1.9%, transparent 50%, #bf61ff 97.5%);
+    background: linear-gradient(-110.13deg, #00cea8 1.9%, transparent 50%, #bf61ff 97.5%);
+}
+
 .orange-text-gradient {
     background: #f12711;
     /* fallback for old browsers */

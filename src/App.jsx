@@ -11,6 +11,7 @@ import {
   Works,
   StarsCanvas,
   BackgroundAnimation,
+  Footer,
 } from "./components";
 
 const App = () => {
@@ -33,6 +34,9 @@ const App = () => {
           <div className="relative z-0">
             <Contact />
             <StarsCanvas />
+          </div>
+          <div className="sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0 flex justify-center">
+            <Footer />
           </div>
         </div>
       </BrowserRouter>
