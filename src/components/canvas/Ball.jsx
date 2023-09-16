@@ -1,3 +1,5 @@
+// components/canvas/Ball.jsx
+
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import * as THREE from "three";
@@ -69,10 +71,11 @@ const BallCanvas = ({ icon }) => {
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
+        <Preload
+          urls={[icon]} // Preload the image specified by icon prop
+        />
         <Ball imgUrl={icon} />
       </Suspense>
-
-      <Preload all />
     </Canvas>
   );
 };

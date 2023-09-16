@@ -4,22 +4,26 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import CanvasLoader from "../Loader";
 
+const EARTH_MODEL_SCENE = "./planet/scene.gltf";
+// Preload the model here
+useGLTF.preload(EARTH_MODEL_SCENE);
+
 const Earth = () => {
-  const { scene } = useGLTF("./planet/scene.gltf");
+  const { scene } = useGLTF(EARTH_MODEL_SCENE);
 
   useEffect(() => {
     if (scene) {
       scene.traverse((child) => {
-        if (child.isMesh && child.geometry) {
-          if (child.geometry.attributes.position) {
-            child.geometry.computeBoundingBox();
+        if (child.isMesh && child.BufferGeometry) {
+          if (child.BufferGeometry.attributes.position) {
+            child.BufferGeometry.computeBoundingBox();
 
             // Check for NaN values in the position array
-            const positionArray = child.geometry.attributes.position.array;
+            const positionArray = child.BufferGeometry.attributes.position.array;
             const hasNaNValues = positionArray.some((value) => isNaN(value));
 
             if (!hasNaNValues) {
-              child.geometry.boundingSphere = new THREE.Sphere();
+              child.BufferGeometry.boundingSphere = new THREE.Sphere();
               const points = [];
               for (let i = 0; i < positionArray.length; i += 3) {
                 points.push(
@@ -30,7 +34,7 @@ const Earth = () => {
                   )
                 );
               }
-              child.geometry.boundingSphere.setFromPoints(points);
+              child.BufferGeometry.boundingSphere.setFromPoints(points);
             } else {
               // Replace the geometry with a simple sphere if the position array contains NaN values
               const radius = 1;
@@ -41,8 +45,8 @@ const Earth = () => {
                 widthSegments,
                 heightSegments
               );
-              child.geometry.dispose();
-              child.geometry = geometry;
+              child.BufferGeometry.dispose();
+              child.BufferGeometry = geometry;
             }
           }
         }

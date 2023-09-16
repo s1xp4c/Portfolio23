@@ -6,6 +6,8 @@ import PropTypes from "prop-types";
 import * as THREE from "three";
 
 const COMPUTERS_MODEL_PATH = "./desktop_pc/scene.gltf";
+// Preload the model here
+useGLTF.preload(COMPUTERS_MODEL_PATH);
 
 const Computers = ({ isMobile }) => {
   const computer = useGLTF(COMPUTERS_MODEL_PATH);
@@ -47,9 +49,9 @@ const Computers = ({ isMobile }) => {
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -2.4, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
+        scale={isMobile ? 0.6 : 0.75}
+        position={isMobile ? [0, -1.5, -1.15] : [0, -2.4, -1.5]}
+        rotation={isMobile ? [-0.05, -0.8, -0.15] : [-0.01, -0.2, -0.1]}
       />
     </mesh>
   );
@@ -63,23 +65,46 @@ const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia("(max-width: 800px)");
 
-    // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
-
-    // Define a callback function to handle changes to the media query
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
+    const handleOrientationChange = () => {
+      switch (screen.orientation.type) {
+        case "landscape-primary":
+          setIsMobile(false);
+          break;
+        case "landscape-secondary":
+          setIsMobile(false);
+          break;
+        case "portrait-secondary":
+        case "portrait-primary":
+          setIsMobile(true);
+          break;
+        default:
+          setIsMobile(false);
+      }
     };
 
-    // Add the callback function as a listener for changes to the media query
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    
+    const handleScreenSizeChange = () => {
+      
+       if (window.screen.availWidth < 500) {
+         // Width is below 500px and then isMobile
+         setIsMobile(true);
+       }
+       else {
+        setIsMobile(false);
+       }
+    };
+    
 
-    // Remove the listener when the component is unmounted
+    handleOrientationChange(); 
+    handleScreenSizeChange(); 
+
+    screen.orientation.addEventListener("change", handleOrientationChange);
+    window.addEventListener("change", handleScreenSizeChange);
+
     return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+      screen.orientation.removeEventListener("change", handleOrientationChange);
+      window.removeEventListener("change", handleScreenSizeChange);
     };
   }, []);
 

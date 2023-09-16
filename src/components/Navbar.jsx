@@ -56,8 +56,8 @@ const Navbar = () => {
         </Link>
            
         <ul className="list-none hidden sm:flex flex-row gap-10">
-          {navLinks.map((nav) => (
-        <motion.div initial={{ x: 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }}
+          {navLinks.map((nav, index) => (
+        <motion.div key={index} initial={{ x: 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }}
   transition={{ type: "spring", stiffness: 150 }}
   >
             <li
