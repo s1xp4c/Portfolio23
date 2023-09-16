@@ -25,6 +25,8 @@ import vite from "./tech/vite.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.png";
+import remix from "./tech/remix.png";
+import vercel from "./tech/vercel.png";
 
 import bacd from "./company/bacd.png";
 import hvidovrehospital from "./company/hvidovrehospital.png";
@@ -63,6 +65,8 @@ export {
     tailwind,
     typescript,
     threejs,
+    remix,
+    vercel,
     bacd,
     hvidovrehospital,
     postnord,

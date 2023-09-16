@@ -15,6 +15,8 @@ import {
     git,
     moralis,
     vite,
+    remix,
+    vercel,
     bacd,
     postnord,
     kbhkommune,
@@ -56,22 +58,23 @@ export const navLinks = [{
 ];
 
 const services = [{
-        title: "NextAuth & Web3 Security",
+        title: "Authentication & Security",
         icon: web3,
     },
     {
-        title: "Typescript & React",
+        title: "Analysis & debugging",
         icon: mobile,
     },
     {
-        title: "Frontend Interfaces",
+        title: "Responsive design",
         icon: backend,
     },
     {
-        title: "2d & 3d Content",
+        title: "Content creation",
         icon: creator,
     },
 ];
+
 const footies = [{
         title: "Site by Morten Six",
         icon: linkedin,
@@ -131,12 +134,20 @@ const technologies = [{
         icon: git,
     },
     {
+        name: "Vercel",
+        icon: vercel,
+    },
+    {
         name: "Moralis",
         icon: moralis,
     },
     {
         name: "Vite",
         icon: vite,
+    },
+    {
+        name: "Remix",
+        icon: remix,
     },
 ];
 
