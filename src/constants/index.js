@@ -62,27 +62,27 @@ const services = [{
         icon: web3,
     },
     {
-        title: "Analysis & debugging",
+        title: "Analysis & Debugging",
         icon: mobile,
     },
     {
-        title: "Responsive design",
+        title: "Responsive Design",
         icon: backend,
     },
     {
-        title: "Content creation",
+        title: "Content Creation",
         icon: creator,
     },
 ];
 
 const footies = [{
-        title: "Site by Morten Six",
+        title: "3D Site by Morten Six",
         icon: linkedin,
         icon2: linkwhite,
         page_link: "https://www.linkedin.com/in/morten-six/",
     },
     {
-        title: "Source code on github ",
+        title: "Sourcecode on github ",
         icon: github,
         icon2: linkwhite,
         page_link: "https://github.com/s1xp4c/Portfolio23",
@@ -121,6 +121,8 @@ const technologies = [{
         name: "Node JS",
         icon: nodejs,
     },
+];
+const technologies2 = [
     {
         name: "MongoDB",
         icon: mongodb,
@@ -353,4 +355,4 @@ const projects = [{
     },
 ];
 
-export { services, technologies, experiences, testimonials, projects, footies };
+export { services, technologies, technologies2, experiences, testimonials, projects, footies };
