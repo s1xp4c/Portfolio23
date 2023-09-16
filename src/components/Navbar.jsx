@@ -42,13 +42,13 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logoPurple} alt="logo" className="w-9 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex pl-2">
+          <img src={logoPurple} alt="logo" className="w-9 h-9 object-contain -rotate-45" />
+          <p className="text-[#915EFF] text-[18px] font-bold cursor-pointer flex pl-2">
             Morten
           </p>
           <span className="sm:block hidden">
-            <p className="text-[#915EFF] text-[18px] font-bold cursor-pointer flex ">
-              | &nbsp; Blockfolio
+            <p className="text-[white] text-[18px] font-bold cursor-pointer flex ">
+              | &nbsp; Portfolio
             </p>
           </span>
         </Link>
@@ -58,7 +58,7 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`${
-                active === nav.title ? "text-white" : "text-secondary"
+                active === nav.title ? "text-white" : "text-[#915EFF]"
               } hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >

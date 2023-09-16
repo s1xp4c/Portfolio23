@@ -1,71 +1,81 @@
 label.btn,
 .btn {
-    padding: 8px 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
+  padding: 8px 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
 }
 
 label.btn:before,
 .btn:before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, var(--primary-color), transparent);
-    transform: translateX(-100%);
-    transition: 0.6s;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: 0.6s;
 }
 
 label.btn:hover,
 .btn:hover {
-    background: transparent;
-    box-shadow: 0 0 4px 4px rgba(51, 219, 177, 0.5);
+  background: transparent;
+  box-shadow: 0 0 4px 4px rgba(51, 219, 177, 0.5);
 }
 
 label.btn:hover:before,
 .btn:hover:before {
-    transform: translateX(100%);
+  transform: translateX(100%);
 }
 
 .form-input-material {
-    --input-default-border-color: rgb(37, 188, 214);
-    --input-border-bottom-color: rgb(37, 188, 214);
+  --input-default-border-color: rgb(37, 188, 214);
+  --input-border-bottom-color: rgb(37, 188, 214);
 }
 
 .form-input-material input,
 .form-input-material textarea {
-    color: white;
+  color: white;
 }
 
 .mail-form {
-    display: flex;
-    flex-direction: column;
-    padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 40px;
 }
 
 .mail-form label.btn,
 .mail-form .btn {
-    text-align: center;
-    display: block;
-    width: 100%;
-    color: rgb(37, 188, 214);
-    border-color: transparent;
+  text-align: center;
+  display: block;
+  width: 100%;
+  color: rgb(37, 188, 214);
+  border-color: transparent;
 }
 
 .mail-form .file-name {
-    color: white;
-    border-color: transparent;
+  color: white;
+  border-color: transparent;
 }
 
 .mail-form .no-file {
-    color: rgb(37, 188, 214);
-    border-color: transparent;
+  color: rgb(37, 188, 214);
+  border-color: transparent;
 }
 
 .label-wrap:hover,
 .btn-wrap:hover {
-    background: transparent;
+  background: transparent;
+}
+
+.g-recaptcha > div {
+  outline: none !important;
+  border: none !important;
 }

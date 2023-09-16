@@ -30,6 +30,7 @@ import {
     phone,
     github,
     linkwhite,
+    linkedin,
 } from "../assets";
 
 export const navLinks = [{
@@ -73,7 +74,7 @@ const services = [{
 ];
 const footies = [{
         title: "Site by Morten Six",
-        icon: git,
+        icon: linkedin,
         icon2: linkwhite,
         page_link: "https://www.linkedin.com/in/morten-six/",
     },
@@ -216,10 +217,10 @@ const testimonials = [{
         iphone: phone,
     },
     {
-        testimonial: "Marias experience working with Morten",
+        testimonial: "Morten is a hard worker who always puts his clients first. His great overview and constant attention to detail never fails to amaze me. \n\nMorten always shows interest in his volunteers and cares for their well being aswell as collaborators and others he works with.",
         name: "Maria Lerche",
-        designation: "Job",
-        company: "Organistation",
+        designation: "Reginal Manager",
+        company: "Roskilde Festival",
         image: marialerche,
         iphone: phone,
 

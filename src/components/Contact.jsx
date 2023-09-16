@@ -8,6 +8,20 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
 const Contact = () => {
+  // const captchaKey = import.meta.env.VITE_APP_CAPTCHA_KEY;
+
+  // useEffect(() => {
+  //   const script = document.createElement("script");
+  //   script.src = "https://www.google.com/recaptcha/api.js";
+  //   script.async = true;
+  //   script.defer = true;
+  //   document.body.appendChild(script);
+
+  //   return () => {
+  //     document.body.removeChild(script);
+  //   };
+  // }, []);
+
   const toast = useToast({
     position: "bottom",
     title: "Succes!",
@@ -27,13 +41,13 @@ const Contact = () => {
     from_email: "",
     to_email: import.meta.env.VITE_APP_EMAIL_ACCOUNT,
     message: "",
-    my_file: null,
-    my_fileName: "",
+    // my_file: null,
+    // my_fileName: "",
   });
   const formRef = useRef(form);
 
   const [loading, setLoading] = useState(false);
-  const [isAttached, setIsAttached] = useState(false);
+  // const [isAttached, setIsAttached] = useState(false);
 
   const inputClassName = `bg-tertiary py-4 px-6 w-full border-[1px] rounded-lg font-medium`;
 
@@ -53,9 +67,9 @@ const Contact = () => {
     }
   };
 
-  const handleAttachClick = () => {
-    setIsAttached(true);
-  };
+  // const handleAttachClick = () => {
+  //   setIsAttached(true);
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -89,14 +103,15 @@ const Contact = () => {
             from_email: "",
             to_email: import.meta.env.VITE_APP_EMAIL_ACCOUNT,
             message: "",
-            my_file: null,
-            my_fileName: "",
+            // my_file: null,
+            // my_fileName: "",
           });
-          setIsAttached(false);
+          // setIsAttached(false);
         },
         (error) => {
           setLoading(false);
           console.error(error.text);
+          console.log(error)
           toast({
             position: "top",
             title: "Error!",
@@ -128,7 +143,7 @@ const Contact = () => {
             className="mail-form bg-tertiary rounded-[20px]"
             encType="multipart/form-data"
           >
-            <div className="form-input-material ">
+            <div className="form-input-material">
               <input
                 type="text"
                 name="from_name"
@@ -177,7 +192,7 @@ const Contact = () => {
                 Your Message
               </label>
             </div>
-            <div className="w-full">
+            {/* <div className="w-full">
               <input
                 type="file"
                 name="my_file"
@@ -213,6 +228,13 @@ const Contact = () => {
                 {"No file chosen"}
               </span>
             )}
+            {/* <div className="w-full min-h-[40px] green-pink-gradient p-[1px] rounded-[10px] shadow-card btn-wrap mt-6"> */}
+            {/* <div
+              className="g-recaptcha border-none rounded-[10px] pt-4 border-0"
+              data-sitekey={captchaKey}
+              data-theme={"dark"}
+            ></div>  */}
+            {/* </div> */}
             <div className="w-full green-pink-gradient p-[1px] rounded-[10px] shadow-card btn-wrap mt-6">
               <button type="submit" className="btn bg-tertiary">
                 {loading ? "Sending..." : "Send"}
