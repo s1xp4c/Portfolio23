@@ -99,8 +99,8 @@ const ComputersCanvas = () => {
     handleOrientationChange(); 
     handleScreenSizeChange(); 
 
-    screen.orientation.addEventListener("change", handleOrientationChange);
-    window.addEventListener("change", handleScreenSizeChange);
+    screen.orientation.addEventListener("change", handleOrientationChange, { passive: true });
+    window.addEventListener("change", handleScreenSizeChange, { passive: true });
 
     return () => {
       screen.orientation.removeEventListener("change", handleOrientationChange);

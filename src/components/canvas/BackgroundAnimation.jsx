@@ -11,13 +11,16 @@ function BackgroundAnimation() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
+    const canvasWidth = canvas.width;
+    const canvasHeight = canvas.height;
+
     let particlesArray;
 
     //get mouseposition
     let mouse = {
       x: undefined,
       y: undefined,
-      radius: (canvas.height / 99) * (canvas.width / 99),
+      radius: (canvasHeight / 99) * (canvasWidth / 99),
     };
 
     // Only respond to mouse if !mobile
@@ -51,10 +54,10 @@ function BackgroundAnimation() {
       // check particle position, check mouse position, move the particle, draw the particle
       update() {
         // check if particle is still within canvas
-        if (this.x > canvas.width || this.x < 0) {
+        if (this.x > canvasWidth || this.x < 0) {
           this.directionX = -this.directionX;
         }
-        if (this.y > canvas.height || this.y < 0) {
+        if (this.y > canvasHeight || this.y < 0) {
           this.directionY = -this.directionY;
         }
         // check collision detection - mouse position /  particle position
@@ -62,13 +65,13 @@ function BackgroundAnimation() {
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
         if (distance < mouse.radius + this.size) {
-          if (mouse.x < this.x && this.x < canvas.width - this.size * 5) {
+          if (mouse.x < this.x && this.x < canvasWidth - this.size * 5) {
             this.x += 5;
           }
           if (mouse.x > this.x && this.x > this.size * 5) {
             this.x -= 5;
           }
-          if (mouse.y < this.y && this.y < canvas.height - this.size * 5) {
+          if (mouse.y < this.y && this.y < canvasHeight - this.size * 5) {
             this.y += 5;
           }
           if (mouse.y > this.y && this.y > this.size * 5) {
@@ -86,9 +89,9 @@ function BackgroundAnimation() {
     // create particle array
     function init() {
       particlesArray = [];
-      let numberOfParticles = (canvas.height * canvas.width) / 25000;
+      let numberOfParticles = (canvasHeight * canvasWidth) / 25000;
       if (!isMobile) {
-        numberOfParticles = (canvas.height * canvas.width) / 17000;
+        numberOfParticles = (canvasHeight * canvasWidth) / 17000;
       }
       for (let i = 0; i < numberOfParticles * 2; i++) {
         let size = Math.random() * 5 + 1;
@@ -113,8 +116,8 @@ function BackgroundAnimation() {
       requestAnimationFrame(animate);
       ctx.clearRect(0, 0, innerWidth, innerHeight);
 
-      for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update();
+      for (const particle of particlesArray) {
+        particle.update();
       }
       connect();
     }
@@ -129,7 +132,7 @@ function BackgroundAnimation() {
               (particlesArray[a].x - particlesArray[b].x) +
             (particlesArray[a].y - particlesArray[b].y) *
               (particlesArray[a].y - particlesArray[b].y);
-          if (distance < (canvas.width / 3) * (canvas.height / 7)) {
+          if (distance < (canvasWidth / 3) * (canvasHeight / 7)) {
             opacityValue = 1 - distance / 30000;
             ctx.strokeStyle = "rgba(145, 94, 255," + opacityValue + ")";
             ctx.lineWidth = 1;
@@ -144,7 +147,7 @@ function BackgroundAnimation() {
 
     // resize event
     window.addEventListener("resize", function () {
-      canvas.width = innerWidth;
+      // canvas.width = innerWidth;
       canvas.height = innerHeight;
       mouse.radius = (canvas.height / 90) * (canvas.height / 90);
       init();

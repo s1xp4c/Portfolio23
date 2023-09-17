@@ -17,7 +17,7 @@ const FeedbackCard = ({
 }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className={`rounded-[50px] mt-12 `}
+    className={`rounded-[50px] mt-12`}
     style={{
       backgroundImage: `url(${iphone})`,
       backgroundSize: "cover",
@@ -26,9 +26,9 @@ const FeedbackCard = ({
       backgroundBlendMode: "multiply",
     }}
   >
-    <div className="flex flex-col pt-25 w-[350px] ">
-      <div className=" p-8 rounded-3xl min-h-[405px] ">
-        <p className="text-white tracking-wider text-[17px] w-full whitespace-pre-line ">
+    <div className="flex flex-col pt-25 pb-25 sm:pb-0 md:h-[450px] w-[90vw] sm:w-[340px] md:w-[320px]">
+      <div className=" p-8 rounded-3xl">
+        <p className="text-white tracking-wider text-[15px] w-full whitespace-pre-line ">
           {testimonial}
         </p>
       </div>
