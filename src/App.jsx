@@ -1,6 +1,7 @@
 // App.jsx
 
 import { BrowserRouter } from "react-router-dom";
+import { BrowserView } from "react-device-detect";
 
 import {
   About,
@@ -21,11 +22,13 @@ const App = () => {
     <>
       <BrowserRouter>
         <div className="relative z-0 bg-primary ">
-          <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+          <div className="bg-hero-pattern bg-cover bg-center">
             <Navbar />
-            {/* <div className="fixed z-0">
+            <BrowserView>
+            <div className="fixed z-0">
               <BackgroundAnimation />
-            </div>  */}
+            </div>  
+            </BrowserView>
             <Hero />
           </div>
           <About />
@@ -35,7 +38,9 @@ const App = () => {
           {/* <Feedbacks /> */}
           <div className="relative z-0">
             <Contact />
-            {/* <StarsCanvas /> */}
+            <BrowserView>
+            <StarsCanvas />
+            </BrowserView>
           </div>
           <div className="sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0 flex justify-center">
             <Footer />
