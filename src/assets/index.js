@@ -37,6 +37,8 @@ import cbs from "./company/cbs.png";
 import blockdefi from "./blockdefi.png";
 import etuga from "./etuga.png";
 import rocketfuel from "./rocketfuel.png";
+import defimint from "./defimint.png";
+import moviedb from "./moviedb.png";
 
 import andersengberg from "./andersengberg.jpeg";
 import kevinyunai from "./kevinyunai.jpg";
@@ -81,4 +83,6 @@ export {
     marialerche,
     phone,
     linkedin,
+    defimint,
+    moviedb,
 };

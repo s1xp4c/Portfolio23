@@ -26,7 +26,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    
+  
     <nav
       className={`${
         styles.paddingX
@@ -53,7 +53,6 @@ const Navbar = () => {
             </p>
           </span>
         </Link>
-           
         <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((nav, index) => (
         <motion.div key={index} initial={{ x: 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }}

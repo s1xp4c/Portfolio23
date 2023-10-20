@@ -23,7 +23,8 @@ import {
     hvidovrehospital,
     blockdefi,
     etuga,
-    rocketfuel,
+    defimint,
+    moviedb,
     threejs,
     cbs,
     kevinyunai,
@@ -290,10 +291,10 @@ const projects = [{
         page_link: "https://blockdefi.netlify.app/",
     },
     {
-        name: "RocketFuel",
-        description: "Onboarding page for the RocketFuel tokensale and Community outreach platform with Content Management System and Real-time crypto market prices",
+        name: "Defimint",
+        description: "Web3 tokenization platform with Metamask wallet connect end token minting options",
         tags: [{
-                name: "webflow",
+                name: "nextjs",
                 color: "blue-text-gradient",
             },
             {
@@ -305,22 +306,94 @@ const projects = [{
                 color: "pink-text-gradient",
             },
             {
-                name: "restapi",
+                name: "tailwind",
                 color: "cyan-text-gradient",
             },
             {
-                name: "photoshop",
+                name: "web3",
                 color: "purple-text-gradient",
             },
             {
-                name: "typeform",
+                name: "vercel",
                 color: "yellow-text-gradient",
             },
+            {
+                name: "prisma",
+                color: "purple-text-gradient",
+            },
         ],
-        image: rocketfuel,
-        source_code_link: "https://github.com/s1xp4c/RKFL_tokensale",
-        page_link: "https://token.rocketfuelblockchain.com/",
+        image: defimint,
+        source_code_link: "https://github.com/bacdio/defimint.app",
+        page_link: "https://defimint-app.vercel.app/",
     },
+    {
+        name: "Movie Database",
+        description: "Movie data base with comment sections and storage",
+        tags: [{
+                name: "remix",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "javascript",
+                color: "green-text-gradient",
+            },
+            {
+                name: "scss",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "tailwind",
+                color: "cyan-text-gradient",
+            },
+            {
+                name: "prisma",
+                color: "purple-text-gradient",
+            },
+            {
+                name: "vercel",
+                color: "yellow-text-gradient",
+            },
+            {
+                name: "react",
+                color: "purple-text-gradient",
+            },
+        ],
+        image: moviedb,
+        source_code_link: "https://github.com/s1xp4c/moviesite_remix_v2",
+        page_link: "https://moviesite-remix-v2.vercel.app/",
+    },
+    // {
+    //     name: "RocketFuel",
+    //     description: "Onboarding page for the RocketFuel tokensale and Community outreach platform with Content Management System and Real-time crypto market prices",
+    //     tags: [{
+    //             name: "webflow",
+    //             color: "blue-text-gradient",
+    //         },
+    //         {
+    //             name: "javascript",
+    //             color: "green-text-gradient",
+    //         },
+    //         {
+    //             name: "css",
+    //             color: "pink-text-gradient",
+    //         },
+    //         {
+    //             name: "restapi",
+    //             color: "cyan-text-gradient",
+    //         },
+    //         {
+    //             name: "photoshop",
+    //             color: "purple-text-gradient",
+    //         },
+    //         {
+    //             name: "typeform",
+    //             color: "yellow-text-gradient",
+    //         },
+    //     ],
+    //     image: rocketfuel,
+    //     source_code_link: "https://github.com/s1xp4c/RKFL_tokensale",
+    //     page_link: "https://token.rocketfuelblockchain.com/",
+    // },
     {
         name: "eTuga",
         description: "Promotion and info page for the innovative electric vehicle 'The TUGA' and onboarding platform for initial Tokensale.",
