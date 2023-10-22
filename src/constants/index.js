@@ -351,11 +351,11 @@ const projects = [{
             },
             {
                 name: "vercel",
-                color: "yellow-text-gradient",
+                color: "purple-text-gradient",
             },
             {
                 name: "react",
-                color: "purple-text-gradient",
+                color: "yellow-text-gradient",
             },
         ],
         image: moviedb,
